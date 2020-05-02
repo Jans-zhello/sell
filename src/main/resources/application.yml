@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://192.168.8.124:3306/sell?useUnicode=true&characterEncoding=utf-8&useSSL=false
+  jpa:
+    show-sql: true
+  #将值为null的属性不返回给前端
+  jackson:
+    default-property-inclusion: non_null
+#根路径配置
+server:
+  servlet:
+    context-path: /sell
+#日志配置
+logging:
+  pattern:
+    #日期-信息换行
+    console: "%d - %msg%n"
+    #修改打印日志级别
+  level:
+    com.zzz.sell.LoggerTest: debug
+#微信配置【测试账号】
+wechat:
+  mpAppId: wxc21c16ddfbc26afd
+  mpAppSecret: 1e98b2412de97e12a21d74a3e1ffbebf
